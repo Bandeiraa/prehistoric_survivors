@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=2]
 
-[ext_resource path="res://assets/characters/lion/1.png" type="Texture" id=1]
 [ext_resource path="res://scripts/character/character.gd" type="Script" id=2]
 [ext_resource path="res://scripts/character/character_stats.gd" type="Script" id=3]
+[ext_resource path="res://scripts/character/character_texture.gd" type="Script" id=4]
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -121,9 +121,9 @@ script = ExtResource( 2 )
 
 [node name="Texture" type="Sprite" parent="."]
 position = Vector2( 10, 0 )
-texture = ExtResource( 1 )
 hframes = 6
 vframes = 7
+script = ExtResource( 4 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
 
