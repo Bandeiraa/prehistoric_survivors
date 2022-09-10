@@ -34,6 +34,20 @@ tracks/0/keys = {
 "update": 1,
 "values": [ 22, 23, 24, 25 ]
 }
+tracks/1/type = "method"
+tracks/1/path = NodePath(".")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"values": [ {
+"args": [ false ],
+"method": "set_physics_process"
+} ]
+}
 
 [sub_resource type="Animation" id=4]
 resource_name = "dash"
@@ -141,3 +155,10 @@ anims/walk = SubResource( 3 )
 
 [node name="Stats" type="Node" parent="."]
 script = ExtResource( 3 )
+dash_duration = 0.4
+
+[node name="DashTimer" type="Timer" parent="Stats"]
+one_shot = true
+
+[connection signal="animation_finished" from="Animation" to="Texture" method="on_animation_finished"]
+[connection signal="timeout" from="Stats/DashTimer" to="Stats" method="on_dash_timer_timeout"]

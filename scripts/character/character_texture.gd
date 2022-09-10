@@ -1,6 +1,7 @@
 extends Sprite
 class_name CharacterTexture
 
+onready var character: KinematicBody2D = get_parent()
 onready var animation: AnimationPlayer = get_node("%Animation")
 
 var type_list: Array
@@ -49,3 +50,19 @@ func move_behavior(velocity: Vector2) -> void:
 		return
 		
 	animation.play("idle")
+	
+	
+func action_behavior(action: String) -> void:
+	on_action = true
+	animation.play(action)
+	
+	
+func on_animation_finished(anim_name) -> void:
+	var action_state: bool = (
+		anim_name == "attack" or
+		anim_name == "dash"
+	)
+	
+	if action_state:
+		on_action = false
+		character.set_physics_process(true)
