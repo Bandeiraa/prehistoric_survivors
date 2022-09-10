@@ -120,7 +120,6 @@ tracks/0/keys = {
 script = ExtResource( 2 )
 
 [node name="Texture" type="Sprite" parent="."]
-position = Vector2( 10, 0 )
 hframes = 6
 vframes = 7
 script = ExtResource( 4 )
@@ -128,6 +127,7 @@ script = ExtResource( 4 )
 [node name="Collision" type="CollisionShape2D" parent="."]
 
 [node name="Animation" type="AnimationPlayer" parent="."]
+unique_name_in_owner = true
 autoplay = "idle"
 anims/RESET = SubResource( 2 )
 anims/attack = SubResource( 5 )

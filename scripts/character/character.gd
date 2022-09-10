@@ -2,11 +2,13 @@ extends KinematicBody2D
 class_name Character, "res://assets/icons/character.svg"
 
 onready var stats: Node = get_node("Stats")
+onready var sprite: Sprite = get_node("Texture")
 
 var velocity: Vector2 = Vector2.ZERO
 
 func _physics_process(_delta: float) -> void:
 	move_behavior()
+	sprite.animate(velocity)
 	
 	
 func move_behavior() -> void:

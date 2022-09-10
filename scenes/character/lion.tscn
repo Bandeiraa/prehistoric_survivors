@@ -12,6 +12,7 @@ radius = 19.0
 texture = ExtResource( 2 )
 type_1 = "res://assets/characters/lion/1.png"
 type_2 = "res://assets/characters/lion/2.png"
+sprite_position_offset = 10.0
 
 [node name="Collision" parent="." index="1"]
 visible = false
