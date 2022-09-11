@@ -1,8 +1,11 @@
-[gd_scene load_steps=11 format=2]
+[gd_scene load_steps=12 format=2]
 
 [ext_resource path="res://scripts/character/character.gd" type="Script" id=2]
 [ext_resource path="res://scripts/character/character_stats.gd" type="Script" id=3]
 [ext_resource path="res://scripts/character/character_texture.gd" type="Script" id=4]
+
+[sub_resource type="CircleShape2D" id=8]
+radius = 20.0
 
 [sub_resource type="Animation" id=2]
 length = 0.001
@@ -139,6 +142,9 @@ vframes = 7
 script = ExtResource( 4 )
 
 [node name="Collision" type="CollisionShape2D" parent="."]
+visible = false
+position = Vector2( 0, 30 )
+shape = SubResource( 8 )
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true

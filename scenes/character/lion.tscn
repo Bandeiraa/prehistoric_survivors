@@ -4,7 +4,7 @@
 [ext_resource path="res://assets/characters/lion/1.png" type="Texture" id=2]
 
 [sub_resource type="CircleShape2D" id=1]
-radius = 19.0
+radius = 20.0
 
 [node name="Lion" instance=ExtResource( 1 )]
 
@@ -15,6 +15,4 @@ type_2 = "res://assets/characters/lion/2.png"
 sprite_position_offset = 10.0
 
 [node name="Collision" parent="." index="1"]
-visible = false
-position = Vector2( 0, 30 )
 shape = SubResource( 1 )
