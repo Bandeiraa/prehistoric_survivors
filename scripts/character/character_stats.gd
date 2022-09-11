@@ -7,8 +7,11 @@ var on_dash: bool = false
 
 export(float) var dash_duration
 
-export(int, 90, 150, 5) var move_speed = 90
-export(int, 300, 450, 10) var dash_speed = 300
+export(int, 90, 150, 5) var base_move_speed = 90
+export(int, 300, 450, 5) var base_dash_speed = 300
+
+export(int, 5, 30, 5) var base_attack = 5
+export(int, 15, 45, 5) var base_health = 15
 
 func start_dash_timer() -> void:
 	on_dash = true

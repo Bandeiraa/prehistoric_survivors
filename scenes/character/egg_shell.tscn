@@ -10,3 +10,9 @@ texture = ExtResource( 2 )
 type_1 = "res://assets/characters/egg_shell/1.png"
 type_2 = "res://assets/characters/egg_shell/2.png"
 sprite_position_offset = 4.0
+
+[node name="Stats" parent="." index="4"]
+base_move_speed = 105
+base_dash_speed = 350
+base_attack = 20
+base_health = 45

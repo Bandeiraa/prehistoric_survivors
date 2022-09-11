@@ -16,3 +16,9 @@ sprite_position_offset = 10.0
 
 [node name="Collision" parent="." index="1"]
 shape = SubResource( 1 )
+
+[node name="Stats" parent="." index="4"]
+base_move_speed = 100
+base_dash_speed = 405
+base_attack = 30
+base_health = 35

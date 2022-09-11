@@ -14,11 +14,11 @@ func _physics_process(_delta: float) -> void:
 	
 func move_behavior() -> void:
 	if stats.on_dash:
-		velocity = get_direction() * stats.dash_speed
+		velocity = get_direction() * stats.base_dash_speed
 		velocity = move_and_slide(velocity)
 		return
 		
-	velocity = get_direction() * stats.move_speed
+	velocity = get_direction() * stats.base_move_speed
 	velocity = move_and_slide(velocity)
 	
 	

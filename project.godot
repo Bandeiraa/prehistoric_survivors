@@ -23,11 +23,17 @@ _global_script_classes=[ {
 "class": "CharacterTexture",
 "language": "GDScript",
 "path": "res://scripts/character/character_texture.gd"
+}, {
+"base": "Control",
+"class": "InitialScreen",
+"language": "GDScript",
+"path": "res://scripts/interface/initial_screen.gd"
 } ]
 _global_script_class_icons={
 "Character": "res://assets/icons/character.svg",
 "CharacterStats": "",
-"CharacterTexture": ""
+"CharacterTexture": "",
+"InitialScreen": ""
 }
 
 [application]
