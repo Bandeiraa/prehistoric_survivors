@@ -24,6 +24,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/character/character_texture.gd"
 }, {
+"base": "Node2D",
+"class": "GameLevel",
+"language": "GDScript",
+"path": "res://scripts/management/game_level.gd"
+}, {
 "base": "Node",
 "class": "GlobalData",
 "language": "GDScript",
@@ -43,6 +48,7 @@ _global_script_class_icons={
 "Character": "res://assets/icons/character.svg",
 "CharacterStats": "",
 "CharacterTexture": "",
+"GameLevel": "",
 "GlobalData": "",
 "InitialScreen": "",
 "TransitionScreen": ""
