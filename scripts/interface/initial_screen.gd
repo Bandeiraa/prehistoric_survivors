@@ -25,6 +25,7 @@ var character_info_dict: Dictionary = {
 			"res://assets/characters/egg_shell/2.png"
 		],
 		
+		"sprite_offset": Vector2(8, 0),
 		"scene_path": "res://scenes/character/egg_shell.tscn"
 	},
 	
@@ -35,6 +36,7 @@ var character_info_dict: Dictionary = {
 			"res://assets/characters/girl/2.png"
 		],
 		
+		"sprite_offset": Vector2(4, 0),
 		"scene_path": "res://scenes/character/girl.tscn"
 	},
 	
@@ -45,16 +47,13 @@ var character_info_dict: Dictionary = {
 			"res://assets/characters/lion/2.png"
 		],
 		
+		"sprite_offset": Vector2(20, 0),
 		"scene_path": "res://scenes/character/lion.tscn"
 	}
 }
 
 func _ready() -> void:
 	randomize()
-	var _start: bool = transition_screen.connect("start_scene", self, "start_scene")
-	
-	
-func start_scene() -> void:
 	connect_signals()
 	change_button_index(0)
 	
@@ -98,13 +97,16 @@ func change_button_index(value: int) -> void:
 	if current_character_index == character_info_dict.size():
 		change_button_state(false, true)
 		
-	var character_name = character_info_dict[str(current_character_index)]["character_name"]
+	var current_character: Dictionary = character_info_dict[str(current_character_index)]
+	
+	var character_name = current_character["character_name"]
 	bottom.texture = load(character_name)
 	
-	var texture_list: Array = character_info_dict[str(current_character_index)]["character_sprite_sheet"]
+	var texture_list: Array = current_character["character_sprite_sheet"]
 	character_sprite.texture = load(texture_list[current_texture_index])
+	character_sprite.position = current_character["sprite_offset"]
 	
-	var character_scene_path: String = character_info_dict[str(current_character_index)]["scene_path"]
+	var character_scene_path: String = current_character["scene_path"]
 	scene_path = character_scene_path
 	
 	
@@ -124,8 +126,12 @@ func _process(_delta: float) -> void:
 		
 		
 func on_character_animation_finished(_anim_name: String) -> void:
+	if already_selected:
+		return
+		
 	current_texture_index += 1
 	current_texture_index = current_texture_index % 2
 	
 	change_button_index(0)
 	character_animation.play("showcase")
+	global_data.skin_index = current_texture_index

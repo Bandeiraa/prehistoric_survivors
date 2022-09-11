@@ -8,4 +8,5 @@ func _ready() -> void:
 	
 func start_scene() -> void:
 	var character = load(global_data.character_scene_path).instance()
+	character.global_position = Vector2(480, 270)
 	add_child(character)

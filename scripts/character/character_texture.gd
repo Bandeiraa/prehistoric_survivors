@@ -14,15 +14,13 @@ export(String) var type_2
 export(float) var sprite_position_offset
 
 func _ready() -> void:
-	randomize()
 	define_character_texture()
 	position.x = sprite_position_offset
 	
 	
 func define_character_texture() -> void:
 	type_list = [type_1, type_2]
-	var random_index: int = randi() % type_list.size()
-	texture = load(type_list[random_index])
+	texture = load(type_list[global_data.skin_index])
 	
 	
 func animate(velocity: Vector2) -> void:
