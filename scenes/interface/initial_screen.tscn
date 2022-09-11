@@ -1,4 +1,4 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=15 format=2]
 
 [ext_resource path="res://assets/interface/text/egg_shell.png" type="Texture" id=1]
 [ext_resource path="res://assets/interface/arrow/left.png" type="Texture" id=2]
@@ -8,6 +8,8 @@
 [ext_resource path="res://scripts/interface/initial_screen.gd" type="Script" id=6]
 [ext_resource path="res://assets/interface/arrow/left_disabled.png" type="Texture" id=7]
 [ext_resource path="res://assets/interface/arrow/right_disabled.png" type="Texture" id=8]
+[ext_resource path="res://assets/interface/arrow/left_hover.png" type="Texture" id=9]
+[ext_resource path="res://assets/interface/arrow/right_hover.png" type="Texture" id=10]
 
 [sub_resource type="Animation" id=5]
 length = 0.001
@@ -27,7 +29,6 @@ tracks/0/keys = {
 [sub_resource type="Animation" id=4]
 resource_name = "showcase"
 length = 2.7
-loop = true
 tracks/0/type = "value"
 tracks/0/path = NodePath("Texture:frame")
 tracks/0/interp = 1
@@ -151,6 +152,7 @@ margin_bottom = 141.0
 rect_min_size = Vector2( 18, 42 )
 disabled = true
 texture_normal = ExtResource( 2 )
+texture_hover = ExtResource( 9 )
 texture_disabled = ExtResource( 7 )
 expand = true
 
@@ -189,6 +191,7 @@ margin_right = 18.0
 margin_bottom = 141.0
 rect_min_size = Vector2( 18, 42 )
 texture_normal = ExtResource( 3 )
+texture_hover = ExtResource( 10 )
 texture_disabled = ExtResource( 8 )
 expand = true
 
@@ -196,3 +199,5 @@ expand = true
 autoplay = "button_animation"
 anims/RESET = SubResource( 3 )
 anims/button_animation = SubResource( 2 )
+
+[connection signal="animation_finished" from="HContainer/CharacterContainer/Pivot/Animation" to="." method="on_character_animation_finished"]

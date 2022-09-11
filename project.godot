@@ -24,22 +24,40 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/character/character_texture.gd"
 }, {
+"base": "Node",
+"class": "GlobalData",
+"language": "GDScript",
+"path": "res://scripts/management/global_data.gd"
+}, {
 "base": "Control",
 "class": "InitialScreen",
 "language": "GDScript",
 "path": "res://scripts/interface/initial_screen.gd"
+}, {
+"base": "CanvasLayer",
+"class": "TransitionScreen",
+"language": "GDScript",
+"path": "res://scripts/management/transition_screen.gd"
 } ]
 _global_script_class_icons={
 "Character": "res://assets/icons/character.svg",
 "CharacterStats": "",
 "CharacterTexture": "",
-"InitialScreen": ""
+"GlobalData": "",
+"InitialScreen": "",
+"TransitionScreen": ""
 }
 
 [application]
 
 config/name="prehistoric survivors"
+run/main_scene="res://scenes/interface/initial_screen.tscn"
 config/icon="res://icon.png"
+
+[autoload]
+
+global_data="*res://scripts/management/global_data.gd"
+transition_screen="*res://scenes/management/transition_screen.tscn"
 
 [display]
 
@@ -118,6 +136,11 @@ ui_dash={
 "deadzone": 0.5,
 "events": [ Object(InputEventKey,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"pressed":false,"scancode":16777237,"physical_scancode":0,"unicode":0,"echo":false,"script":null)
 , Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":2,"pressed":false,"doubleclick":false,"script":null)
+ ]
+}
+ui_click={
+"deadzone": 0.5,
+"events": [ Object(InputEventMouseButton,"resource_local_to_scene":false,"resource_name":"","device":0,"alt":false,"shift":false,"control":false,"meta":false,"command":false,"button_mask":0,"position":Vector2( 0, 0 ),"global_position":Vector2( 0, 0 ),"factor":1.0,"button_index":1,"pressed":false,"doubleclick":false,"script":null)
  ]
 }
 
