@@ -5,8 +5,14 @@ onready var stats: Node = get_node("Stats")
 onready var sprite: Sprite = get_node("Texture")
 onready var animation: AnimationPlayer = get_node("Animation")
 
+onready var spell_manager: Node = get_node("SpellManager")
+
 var velocity: Vector2 = Vector2.ZERO
 
+func _ready() -> void:
+	set_physics_process(false)
+	
+	
 func fade_out() -> void:
 	animation.play("fade_out")
 	
@@ -35,9 +41,19 @@ func get_direction() -> Vector2:
 	
 	
 func action_behavior() -> void:
-	if Input.is_action_just_pressed("ui_attack") and not sprite.on_action:
+	var attack_condition: bool = (
+		Input.is_action_just_pressed("ui_attack") and
+		spell_manager.initial_spell.can_attack and
+		not sprite.on_action
+	)
+	
+	if attack_condition:
 		sprite.action_behavior("attack")
 		
 	if Input.is_action_just_pressed("ui_dash") and not sprite.on_action:
 		sprite.action_behavior("dash")
 		stats.start_dash_timer()
+		
+		
+func spawn_projectile() -> void:
+	spell_manager.initial_spell.spawn_spell()

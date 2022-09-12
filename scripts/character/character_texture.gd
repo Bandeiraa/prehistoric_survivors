@@ -33,7 +33,7 @@ func animate(velocity: Vector2) -> void:
 	
 	
 func verify_direction() -> void:
-	var direction: float = get_global_mouse_position().x - global_position.x
+	var direction: float = get_global_mouse_position().x - character.global_position.x
 	
 	if direction > 0:
 		flip_h = false

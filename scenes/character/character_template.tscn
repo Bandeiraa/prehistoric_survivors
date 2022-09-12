@@ -1,5 +1,6 @@
-[gd_scene load_steps=13 format=2]
+[gd_scene load_steps=14 format=2]
 
+[ext_resource path="res://scripts/character/character_spell_manager.gd" type="Script" id=1]
 [ext_resource path="res://scripts/character/character.gd" type="Script" id=2]
 [ext_resource path="res://scripts/character/character_stats.gd" type="Script" id=3]
 [ext_resource path="res://scripts/character/character_texture.gd" type="Script" id=4]
@@ -56,11 +57,14 @@ tracks/1/loop_wrap = true
 tracks/1/imported = false
 tracks/1/enabled = true
 tracks/1/keys = {
-"times": PoolRealArray( 0 ),
-"transitions": PoolRealArray( 1 ),
+"times": PoolRealArray( 0, 0.1 ),
+"transitions": PoolRealArray( 1, 1 ),
 "values": [ {
 "args": [ false ],
 "method": "set_physics_process"
+}, {
+"args": [  ],
+"method": "spawn_projectile"
 } ]
 }
 
@@ -193,6 +197,9 @@ dash_duration = 0.4
 
 [node name="DashTimer" type="Timer" parent="Stats"]
 one_shot = true
+
+[node name="SpellManager" type="Node" parent="."]
+script = ExtResource( 1 )
 
 [connection signal="animation_finished" from="Animation" to="Texture" method="on_animation_finished"]
 [connection signal="timeout" from="Stats/DashTimer" to="Stats" method="on_dash_timer_timeout"]
