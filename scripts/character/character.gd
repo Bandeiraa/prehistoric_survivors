@@ -3,9 +3,14 @@ class_name Character, "res://assets/icons/character.svg"
 
 onready var stats: Node = get_node("Stats")
 onready var sprite: Sprite = get_node("Texture")
+onready var animation: AnimationPlayer = get_node("Animation")
 
 var velocity: Vector2 = Vector2.ZERO
 
+func fade_out() -> void:
+	animation.play("fade_out")
+	
+	
 func _physics_process(_delta: float) -> void:
 	move_behavior()
 	action_behavior()

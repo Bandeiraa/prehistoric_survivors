@@ -1,4 +1,4 @@
-[gd_scene load_steps=12 format=2]
+[gd_scene load_steps=13 format=2]
 
 [ext_resource path="res://scripts/character/character.gd" type="Script" id=2]
 [ext_resource path="res://scripts/character/character_stats.gd" type="Script" id=3]
@@ -20,6 +20,18 @@ tracks/0/keys = {
 "transitions": PoolRealArray( 1 ),
 "update": 0,
 "values": [ 0 ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:modulate")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ) ]
 }
 
 [sub_resource type="Animation" id=5]
@@ -84,6 +96,21 @@ tracks/0/keys = {
 "values": [ 28, 29, 30, 31, 32 ]
 }
 
+[sub_resource type="Animation" id=9]
+resource_name = "fade_out"
+tracks/0/type = "value"
+tracks/0/path = NodePath(".:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
 [sub_resource type="Animation" id=6]
 resource_name = "hit"
 length = 0.2
@@ -134,6 +161,7 @@ tracks/0/keys = {
 }
 
 [node name="CharacterTemplate" type="KinematicBody2D"]
+modulate = Color( 1, 1, 1, 0 )
 script = ExtResource( 2 )
 
 [node name="Texture" type="Sprite" parent="."]
@@ -148,11 +176,11 @@ shape = SubResource( 8 )
 
 [node name="Animation" type="AnimationPlayer" parent="."]
 unique_name_in_owner = true
-autoplay = "idle"
 anims/RESET = SubResource( 2 )
 anims/attack = SubResource( 5 )
 anims/dash = SubResource( 4 )
 anims/death = SubResource( 7 )
+anims/fade_out = SubResource( 9 )
 anims/hit = SubResource( 6 )
 anims/idle = SubResource( 1 )
 anims/walk = SubResource( 3 )

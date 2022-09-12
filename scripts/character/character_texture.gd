@@ -6,7 +6,7 @@ onready var animation: AnimationPlayer = get_node("%Animation")
 
 var type_list: Array
 
-var on_action: bool = false
+var on_action: bool = true
 
 export(String) var type_1
 export(String) var type_2
@@ -57,6 +57,7 @@ func action_behavior(action: String) -> void:
 	
 func on_animation_finished(anim_name) -> void:
 	var action_state: bool = (
+		anim_name == "fade_out" or
 		anim_name == "attack" or
 		anim_name == "dash"
 	)

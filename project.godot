@@ -9,6 +9,11 @@
 config_version=4
 
 _global_script_classes=[ {
+"base": "ParallaxBackground",
+"class": "Background",
+"language": "GDScript",
+"path": "res://scripts/environment/background.gd"
+}, {
 "base": "KinematicBody2D",
 "class": "Character",
 "language": "GDScript",
@@ -45,6 +50,7 @@ _global_script_classes=[ {
 "path": "res://scripts/management/transition_screen.gd"
 } ]
 _global_script_class_icons={
+"Background": "",
 "Character": "res://assets/icons/character.svg",
 "CharacterStats": "",
 "CharacterTexture": "",
