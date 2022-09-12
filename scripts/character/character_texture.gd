@@ -24,7 +24,7 @@ func define_character_texture() -> void:
 	
 	
 func animate(velocity: Vector2) -> void:
-	verify_direction(velocity.x)
+	verify_direction()
 	
 	if on_action: 
 		return
@@ -32,7 +32,9 @@ func animate(velocity: Vector2) -> void:
 	move_behavior(velocity)
 	
 	
-func verify_direction(direction: float) -> void:
+func verify_direction() -> void:
+	var direction: float = get_global_mouse_position().x - global_position.x
+	
 	if direction > 0:
 		flip_h = false
 		position.x = sprite_position_offset
