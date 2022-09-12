@@ -6,6 +6,7 @@ onready var sprite: Sprite = get_node("Texture")
 onready var animation: AnimationPlayer = get_node("Animation")
 
 onready var spell_manager: Node = get_node("SpellManager")
+onready var spell_spawn_position: Position2D = get_node("SpellSpawnPosition")
 
 var velocity: Vector2 = Vector2.ZERO
 

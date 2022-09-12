@@ -1,0 +1,9 @@
+[gd_scene load_steps=4 format=2]
+
+[ext_resource path="res://scenes/spell/manager/spell_manager.tscn" type="PackedScene" id=1]
+[ext_resource path="res://scenes/spell/throwable/bone.tscn" type="PackedScene" id=2]
+[ext_resource path="res://scripts/spell/manager/club_spell_manager.gd" type="Script" id=3]
+
+[node name="BoneSpellManager" instance=ExtResource( 1 )]
+script = ExtResource( 3 )
+spell = ExtResource( 2 )

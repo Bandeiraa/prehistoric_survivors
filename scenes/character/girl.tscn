@@ -6,13 +6,19 @@
 [node name="Girl" instance=ExtResource( 1 )]
 
 [node name="Texture" parent="." index="0"]
+position = Vector2( 2, 0 )
 texture = ExtResource( 2 )
 type_1 = "res://assets/characters/girl/1.png"
 type_2 = "res://assets/characters/girl/2.png"
 sprite_position_offset = 2.0
+spell_x_spawn_position = 45.0
+spell_y_spawn_position = -5.0
 
 [node name="Stats" parent="." index="4"]
 base_move_speed = 130
 base_dash_speed = 375
 base_attack = 15
 base_health = 25
+
+[node name="SpellSpawnPosition" parent="." index="6"]
+position = Vector2( 45, -5 )

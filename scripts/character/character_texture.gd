@@ -2,7 +2,9 @@ extends Sprite
 class_name CharacterTexture
 
 onready var character: KinematicBody2D = get_parent()
+
 onready var animation: AnimationPlayer = get_node("%Animation")
+onready var spawn_position: Position2D = get_node("%SpellSpawnPosition")
 
 var type_list: Array
 
@@ -13,9 +15,16 @@ export(String) var type_2
 
 export(float) var sprite_position_offset
 
+export(float) var spell_x_spawn_position
+export(float) var spell_y_spawn_position
+
 func _ready() -> void:
 	define_character_texture()
 	position.x = sprite_position_offset
+	spawn_position.position = Vector2(
+		spell_x_spawn_position, 
+		spell_y_spawn_position
+	)
 	
 	
 func define_character_texture() -> void:
@@ -38,10 +47,18 @@ func verify_direction() -> void:
 	if direction > 0:
 		flip_h = false
 		position.x = sprite_position_offset
+		spawn_position.position = Vector2(
+			spell_x_spawn_position, 
+			spell_y_spawn_position
+		)
 		
 	if direction < 0:
 		flip_h = true
 		position.x = -sprite_position_offset
+		spawn_position.position = Vector2(
+			-spell_x_spawn_position, 
+			spell_y_spawn_position
+		)
 		
 		
 func move_behavior(velocity: Vector2) -> void:

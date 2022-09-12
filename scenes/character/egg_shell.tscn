@@ -11,6 +11,8 @@ texture = ExtResource( 2 )
 type_1 = "res://assets/characters/egg_shell/1.png"
 type_2 = "res://assets/characters/egg_shell/2.png"
 sprite_position_offset = 4.0
+spell_x_spawn_position = 50.0
+spell_y_spawn_position = -5.0
 
 [node name="Stats" parent="." index="4"]
 base_move_speed = 105
@@ -22,3 +24,6 @@ base_health = 45
 initial_spell = NodePath("ClubSpellManager")
 
 [node name="ClubSpellManager" parent="SpellManager" index="0" instance=ExtResource( 3 )]
+
+[node name="SpellSpawnPosition" parent="." index="6"]
+position = Vector2( 50, -5 )
