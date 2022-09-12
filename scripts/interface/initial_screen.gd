@@ -19,7 +19,7 @@ var scene_path: String
 
 var character_info_dict: Dictionary = {
 	"1": {
-		"character_name": "res://assets/interface/text/egg_shell.png",
+		"character_name": "res://assets/interface/text/characters/egg_shell.png",
 		"character_sprite_sheet": [
 			"res://assets/characters/egg_shell/1.png",
 			"res://assets/characters/egg_shell/2.png"
@@ -30,7 +30,7 @@ var character_info_dict: Dictionary = {
 	},
 	
 	"2": {
-		"character_name": "res://assets/interface/text/girl.png",
+		"character_name": "res://assets/interface/text/characters/girl.png",
 		"character_sprite_sheet": [
 			"res://assets/characters/girl/1.png",
 			"res://assets/characters/girl/2.png"
@@ -41,7 +41,7 @@ var character_info_dict: Dictionary = {
 	},
 	
 	"3": {
-		"character_name": "res://assets/interface/text/lion.png",
+		"character_name": "res://assets/interface/text/characters/lion.png",
 		"character_sprite_sheet": [
 			"res://assets/characters/lion/1.png",
 			"res://assets/characters/lion/2.png"

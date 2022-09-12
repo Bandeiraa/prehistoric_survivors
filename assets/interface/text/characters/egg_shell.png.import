@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/lion.png-f091b52b3a4bfc7beacaff1960edfeda.stex"
+path="res://.import/egg_shell.png-80373bce408b3ae47dfe7245e754373a.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/interface/text/lion.png"
-dest_files=[ "res://.import/lion.png-f091b52b3a4bfc7beacaff1960edfeda.stex" ]
+source_file="res://assets/interface/text/characters/egg_shell.png"
+dest_files=[ "res://.import/egg_shell.png-80373bce408b3ae47dfe7245e754373a.stex" ]
 
 [params]
 

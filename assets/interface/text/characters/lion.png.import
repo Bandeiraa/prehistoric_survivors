@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/girl.png-88468003941cba334d8c614a67062969.stex"
+path="res://.import/lion.png-5a61e8b860109edaa6cc4614068d2876.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/interface/text/girl.png"
-dest_files=[ "res://.import/girl.png-88468003941cba334d8c614a67062969.stex" ]
+source_file="res://assets/interface/text/characters/lion.png"
+dest_files=[ "res://.import/lion.png-5a61e8b860109edaa6cc4614068d2876.stex" ]
 
 [params]
 
