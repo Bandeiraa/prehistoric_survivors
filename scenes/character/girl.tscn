@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://scenes/character/character_template.tscn" type="PackedScene" id=1]
 [ext_resource path="res://assets/characters/girl/1.png" type="Texture" id=2]
+[ext_resource path="res://scenes/spell/manager/rock_spell_manager.tscn" type="PackedScene" id=3]
 
 [node name="Girl" instance=ExtResource( 1 )]
 
@@ -19,6 +20,11 @@ base_move_speed = 130
 base_dash_speed = 375
 base_attack = 15
 base_health = 25
+
+[node name="SpellManager" parent="." index="5"]
+initial_spell = NodePath("RockSpellManager")
+
+[node name="RockSpellManager" parent="SpellManager" index="0" instance=ExtResource( 3 )]
 
 [node name="SpellSpawnPosition" parent="." index="6"]
 position = Vector2( 45, -5 )
