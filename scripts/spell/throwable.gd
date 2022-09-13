@@ -10,6 +10,8 @@ var rotation_direction: int
 
 var already_killed: bool = false
 
+export(int) var damage
+
 export(int) var health
 export(int) var move_speed
 export(int) var rotation_speed
@@ -24,8 +26,9 @@ func _process(delta: float) -> void:
 	rotation_degrees += rotation_direction * rotation_speed * delta
 	
 	
-func on_throwable_area_entered(_area) -> void:
+func on_throwable_area_entered(area) -> void:
 	health = clamp(health - 1, 0, max_health)
+	area.get_parent().update_health(damage)
 	if health == 0:
 		kill()
 		

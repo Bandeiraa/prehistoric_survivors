@@ -39,6 +39,11 @@ _global_script_classes=[ {
 "language": "GDScript",
 "path": "res://scripts/spell/manager/club_spell_manager.gd"
 }, {
+"base": "KinematicBody2D",
+"class": "Enemy",
+"language": "GDScript",
+"path": "res://scripts/enemy/enemy.gd"
+}, {
 "base": "Node2D",
 "class": "GameLevel",
 "language": "GDScript",
@@ -76,6 +81,7 @@ _global_script_class_icons={
 "CharacterStats": "",
 "CharacterTexture": "",
 "ClubSpellManager": "",
+"Enemy": "",
 "GameLevel": "",
 "GlobalData": "",
 "InitialScreen": "",

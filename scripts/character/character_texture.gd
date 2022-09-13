@@ -78,7 +78,8 @@ func on_animation_finished(anim_name) -> void:
 	var action_state: bool = (
 		anim_name == "fade_out" or
 		anim_name == "attack" or
-		anim_name == "dash"
+		anim_name == "dash" or
+		anim_name == "hit"
 	)
 	
 	if action_state:

@@ -58,3 +58,16 @@ func action_behavior() -> void:
 		
 func spawn_projectile() -> void:
 	spell_manager.initial_spell.spawn_spell()
+	
+	
+func update_health(damage: int) -> void:
+	set_physics_process(false)
+	if stats.health == 0:
+		return
+		
+	stats.health = clamp(stats.health - damage, 0, stats.max_health)
+	if stats.health == 0:
+		sprite.action_behavior("death")
+		return
+		
+	sprite.action_behavior("hit")
